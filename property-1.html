@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVA Home Realty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link
+         href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* Property Detail Page Specific Styles */
+        .property-detail {
+            padding-top: 100px;
+            background-color: #F2F5FA;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+            margin-bottom: 20px;
+        }
+
+        .property-title {
+            color: #0C0C0D;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .property-location {
+            display: flex;
+            align-items: center;
+            color: #616366;
+            margin-top: 5px;
+        }
+
+        .property-location i {
+            margin-right: 8px;
+            color: #1F7D53;
+        }
+
+        .property-price {
+            color: #1F7D53;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .property-price span {
+            font-size: 1rem;
+            color: #616366;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            
+            margin-bottom: 20px;
+        }
+
+        .action-btn {
+            padding: 8px 16px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #616366;
+        }
+
+        .property-content {
+            display: flex;
+            
+            gap: 30px;
+            
+        }
+
+        .property-left {
+            flex: 3;
+        }
+
+        .property-right {
+            flex: 2;
+        }
+
+        .slider-container {
+            position: relative;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .slider-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .slider-prev {
+            left: 15px;
+        }
+
+        .slider-next {
+            right: 15px;
+        }
+
+        .active-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #1F7D53;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #1F7D53;
+        }
+
+        .overview {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #0C0C0D;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #303133;
+        }
+
+        .overview-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px 10px;
+        }
+
+        .overview-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .overview-icon {
+            color: #1F7D53;
+            font-size: 1.2rem;
+        }
+
+        .overview-text {
+            color: #616366;
+            font-size: 0.9rem;
+        }
+
+        .overview-value {
+            color: #303133;
+            font-weight: 500;
+        }
+
+        .description {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #616366;
+            line-height: 1.6;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .description-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #303133;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        .address {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            color: #616366;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .address-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #303133;
+        }
+
+        .address-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .address-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .address-label {
+            color: #616366;
+            font-size: 0.9rem;
+        }
+
+        .address-value {
+            color: #303133;
+            font-weight: 500;
+        }
+
+        .maps-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #F2F5FA;
+            border: 1px solid #1F7D53;
+            color: #1F7D53;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .maps-button:hover {
+            background-color: #1F7D53;
+            color: white;
+        }
+
+        /* Form Styling */
+        .contact-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .agent-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .agent-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .agent-details h3 {
+            color: #303133;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .agent-details p {
+            color: #616366;
+            font-size: 0.9rem;
+            text-align: left;
+            width: 100%;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-heading {
+            color: #303133;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background-color: #1F7D53;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            background-color: #255F38;
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .contact-option {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #303133;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-option:hover {
+            border-color: #1F7D53;
+            color: #1F7D53;
+        }
+
+        .contact-option i {
+            font-size: 1.2rem;
+        }
+        .f{
+            color: #0c0c0da8;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            width: 100%;
+            text-align: left;
+        }
+
+      
+    </style>
+</head>
+<body>
+    <header class="header">  
+        <ul class="navlist">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="prop.html">Propriétés</a></li>
+            <li><a href="about-us.html">À propos</a></li>
+            
+        </ul>
+        <div>
+           <a href="inscription.php"><button>connexion</button>
+            <button>inscription</button></a>
+        </div>
+    </header>
+
+    <section class="property-detail">
+        <div class="property-header">
+            <div>
+                <h1 class="property-title">Villa Élégance</h1>
+                <div class="property-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                     Rue Hadj Ahmed, Bab El Oued, Alger
+                </div>
+            </div>
+            <div class="property-price">
+                63 800 000 DA
+            </div>
+        </div>
+
+        <div class="property-content">
+            <div class="property-left">
+                <div class="slider-container">
+                    <img src="./img/property-5.webp" alt="Appartement de luxe" class="main-image">
+                    <div class="active-badge">Actif</div>
+                    <div class="slider-control slider-prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="slider-control slider-next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="thumbnails">
+                    <img src="./img/beautiful-shot-modern-house-kitchen-dining-room.jpg" alt="Miniature 1" class="thumbnail active">
+                    <img src="./img/3d-rendering-modern-dining-room-living-room-with-luxury-decor.jpg" alt="Miniature 2" class="thumbnail">
+                    <img src="img/3d-rendering-loft-luxury-living-room-with-bookshelf.jpg" alt="Miniature 3" class="thumbnail">
+                    <img src="./img/Thumbnail 4.webp" alt="Miniature 4" class="thumbnail">
+                    
+                </div>
+
+                <div class="overview">
+                    <h2 class="overview-title">Aperçu</h2>
+                    <div class="overview-details">
+                        <div class="overview-item">
+                            <span class="overview-icon material-symbols-rounded">calendar_today</span>
+                            <div>
+                                <div class="overview-text">Mis à jour le :</div>
+                                <div class="overview-value">23 décembre 2025</div>
+                            </div>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-icon material-symbols-rounded">bed</span>
+                            <div>
+                                <div class="overview-text">Chambres :</div>
+                                <div class="overview-value">6 Chambres</div>
+                            </div>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-icon material-symbols-rounded">bathtub</span>
+                            <div>
+                                <div class="overview-text">Salles de bain :</div>
+                                <div class="overview-value">2 Salles de bain</div>
+                            </div>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-icon material-symbols-rounded">garage</span>
+                            <div>
+                                <div class="overview-text">Garages :</div>
+                                <div class="overview-value">1 Garage</div>
+                            </div>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-icon material-symbols-rounded">straighten</span>
+                            <div>
+                                <div class="overview-text">Surface :</div>
+                                <div class="overview-value">145 m²</div>
+                            </div>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-icon material-symbols-rounded">home</span>
+                            <div>
+                                <div class="overview-text">Année de construction :</div>
+                                <div class="overview-value">2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <h2 class="description-title">Description</h2>
+                    <p class="f">
+                        Cet appartement magnifique dispose de grandes fenêtres offrant une vue panoramique sur la ville, un plan ouvert et des finitions modernes. L'espace de vie spacieux est parfait pour recevoir avec une abondance de lumière naturelle créant une atmosphère lumineuse et accueillante.
+                        La propriété comprend 5 chambres, 2 salles de bain et un accès à 20 garages. Avec 1 900 pieds carrés d'espace de vie, cet appartement offre un cadre de vie confortable avec des équipements de luxe et une proximité avec les attractions locales.
+                        La cuisine est entièrement équipée avec des appareils en acier inoxydable, des comptoirs en granit et des armoires sur mesure. La suite parentale comprend une salle de bain avec baignoire et douche séparée.
+                    </p>
+                </div>
+
+                <div class="address">
+                    <h2 class="address-title">Adresse</h2>
+                    <div class="address-details">
+                        <div class="address-item">
+                            <div class="address-label">Adresse :</div>
+                            <div class="address-value">Rue Hadj Ahmed, Bab El Oued, Alger</div>
+                        </div>
+                        <div class="address-item">
+                            <div class="address-label">Ville :</div>
+                            <div class="address-value">Bab El Oued</div>
+                        </div>
+                        <div class="address-item">
+                            <div class="address-label">Quartier :</div>
+                            <div class="address-value">Rue Hadj Ahmed</div>
+                        </div>
+                       
+                        <div class="address-item">
+                            <div class="address-label">Code postal :</div>
+                            <div class="address-value">16000</div>
+                        </div>
+                        <div class="address-item">
+                            <div class="address-label">Pays :</div>
+                            <div class="address-value">Algérie</div>
+                        </div>
+                    </div>
+                    <button class="maps-button">
+                        <i class="fa-solid fa-map-location-dot"></i> 
+                        <a href="https://www.google.com/maps/place/Annaba/@36.9067162,7.7005031,12.92z/data=!4m6!3m5!1s0x12f007bb034e7571:0x28fddce8b255b712!8m2!3d36.897375!4d7.7500122!16zL20vMDRtN2Zo?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D">Ouvrir dans Google Maps</a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="property-right">
+                <div class="contact-box">
+                    <div class="agent-info">
+                        <img src="./img/avatar-3.jpg" alt="Photo de l'agent" class="agent-photo">
+                        <div class="agent-details">
+                            <h3>Karim Meddah</h3>
+                            <p>ID Membre : 987654321</p>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" action="process_inquiry.php" method="POST">
+                        <h3 class="form-heading">Planifier une visite ?</h3>
+    
+                        <input type="text" class="form-input" name="name" placeholder="Votre nom" required>
+                        <input type="email" class="form-input" name="email" placeholder="Votre email" required>
+                        <input type="tel" class="form-input" name="phone" placeholder="Votre téléphone" required>
+                        <textarea class="form-textarea" name="message" placeholder="Je suis intéressé par [Appartement avec sous-unités]" required></textarea>
+    
+                        <!-- Champ caché pour stocker les informations de la propriété -->
+                        <input type="hidden" name="property_id" value="prop001">
+                        <input type="hidden" name="property_title" value="Appartement avec sous-unités">
+    
+                        <button type="submit" class="form-submit">Envoyer</button>
+
+                        <div class="contact-options">
+                            <div class="contact-option">
+                                <i class="fa-solid fa-phone"></i> Appeler
+                            </div>
+                            <div class="contact-option">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#home">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#properties">Biens</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">À propos</a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        
+        <p>© 2025 RealEstateCo. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Fonctionnalité simple du diaporama d'images
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImage = document.querySelector('.main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            
+            let currentIndex = 0;
+            
+            // Événement de clic pour les miniatures
+            thumbnails.forEach((thumb, index) => {
+                thumb.addEventListener('click', () => {
+                    mainImage.src = thumb.src;
+                    currentIndex = index;
+                    
+                    // Mettre à jour la miniature active
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                });
+            });
+            
+            // Clic sur le bouton précédent
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+                mainImage.src = thumbnails[currentIndex].src;
+                
+                // Mettre à jour la miniature active
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumbnails[currentIndex].classList.add('active');
+            });
+            
+            // Clic sur le bouton suivant
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % thumbnails.length;
+                mainImage.src = thumbnails[currentIndex].src;
+                
+                // Mettre à jour la miniature active
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumbnails[currentIndex].classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

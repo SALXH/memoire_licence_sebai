@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriétés - Site Immobilier</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header" data-header>  
+     
+        
+        <ul class="navlist">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="prop.html" class="active">Propriétés</a></li>
+            <li><a href="about-us.html">À Propos</a></li>
+            
+        </ul>
+        <div>
+           <a href="inscription.php"><button>connexion</button>
+            <button>inscription</button></a>
+        </div>
+    </header>
+
+    <section class="properties-main">
+        <div class="properties-container">
+            <div class="top-bar">
+                <div class="results-info">
+                    <p>Affichage de 01 - 08 sur 28 résultats</p>
+                </div>
+               
+                <div class="search-bar">
+                    <input type="text" placeholder="Entrez des mots-clés..." id="keywordSearch">
+                </div>
+            </div>
+
+            <div class="property-listings">
+                <!-- Propriété 1 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <a href="property-1.html"> <img src="./img/property-1.jpg"></a> 
+                        <div class="property-tags">
+                            <span class="status-tag for-sale">À Vendre</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Villa Élégance</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>6 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Alger</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>145 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">63 800 000 DA</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propriété 2 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="./img/property-2.jpg" alt="Maison Familiale Exceptionnelle">
+                        <div class="property-tags">
+                            <span class="status-tag for-sale">À Vendre</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Villa Les Oliviers</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>9 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Alger</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>300 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">120 000 000 DA</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propriété 3 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="./img/property-3.jpg" alt="Groupe Immobilier Agile">
+                        <div class="property-tags",>
+                            <span class="status-tag for-rent">À Louer</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Groupe Immobilier Agile</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>3 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Constantine</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>3000 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">450 000 €</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propriété 4 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="./img/property-4.jpg" alt="Conseiller Immobilier Confort">
+                        <div class="property-tags">
+                            <span class="status-tag for-sale">À Vendre</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Conseiller Immobilier Confort</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>3 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Annaba</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>3000 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">450 000 €</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propriété 5 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="./img/property-5.jpg" alt="Propriétés Liberté, SARL">
+                        <div class="property-tags">
+                            <span class="distance-tag">1.2km</span>
+                            <span class="status-tag for-rent">À Louer</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Propriétés Liberté, SARL</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>3 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Sétif</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>3000 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">450 000 €</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propriété 6 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="./img/property-6.jpg" alt="Agence Immobilière Future Work">
+                        <div class="property-tags">
+                            <span class="distance-tag">1.2km</span>
+                            <span class="status-tag for-sale">À Vendre</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Agence Immobilière Future Work</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>3 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Blida</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>3000 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">450 000 €</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propriété 7 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="./img/property-7.jpg" alt="Villa Sur l'Avenue Washington">
+                        <div class="property-tags">
+                            <span class="distance-tag">1.2km</span>
+                            <span class="status-tag for-rent">À Louer</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Villa Sur l'Avenue Washington</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>3 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Batna</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>3000 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">450 000 €</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propriété 8 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="./img/aadl 3.jpg" alt="Aadl">
+                        <div class="property-tags">
+                            <span class="distance-tag">15km</span>
+                            <span class="status-tag for-sale">À loeur</span>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <h3>Aadl de sidi Amar</h3>
+                        <div class="property-meta">
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">bed</i>
+                                <span>3 Chambres</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">location_on</i>
+                                <span>Annaba</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="material-symbols-rounded">straighten</i>
+                                <span>3000 m²</span>
+                            </div>
+                        </div>
+                        <div class="property-price-details">
+                            <span class="property-price">450 000 €</span>
+                            <a href="#" class="details-btn">DÉTAILS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="prev-page"><i class='bx bx-chevron-left'></i></a>
+                <a href="#" class="page-number active">1</a>
+                <a href="#" class="page-number">2</a>
+                <a href="#" class="page-number">3</a>
+                <a href="#" class="page-number">4</a>
+                <a href="#" class="next-page"><i class='bx bx-chevron-right'></i></a>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="search-section">
+                <h3>Recherche Avancée</h3>
+                <form id="advancedSearchForm">
+                    <div class="form-group">
+                        <label for="categories">Catégories</label>
+                        <select id="categories">
+                            <option value="">Toutes Catégories</option>
+                            <option value="house">Maison</option>
+                            <option value="apartment">Appartement</option>
+                            <option value="villa">Villa</option>
+                            <option value="office">Bureau</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priceRange">Fourchette de Prix</label>
+                        <select id="priceRange">
+                            <option value="">Tous Prix</option>
+                            <option value="0-100000">0 € - 100 000 €</option>
+                            <option value="100000-300000">100 000 € - 300 000 €</option>
+                            <option value="300000-500000">300 000 € - 500 000 €</option>
+                            <option value="500000-1000000">500 000 € - 1 000 000 €</option>
+                            <option value="1000000+">1 000 000 €+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose">Objectif</label>
+                        <select id="purpose">
+                            <option value="">Tous Objectifs</option>
+                            <option value="sale">À Vendre</option>
+                            <option value="rent">À Louer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Adresse</label>
+                        <select id="address">
+                            <option value="">Toutes Villes</option>
+                            <option value="Algiers">Alger</option>
+                            <option value="Oran">Oran</option>
+                            <option value="Constantine">Constantine</option>
+                            <option value="Annaba">Annaba</option>
+                            <option value="Batna">Batna</option>
+                            <option value="Djelfa">Djelfa</option>
+                            <option value="Setif">Sétif</option>
+                            <option value="Sidi Bel Abbes">Sidi Bel Abbès</option>
+                            <option value="Biskra">Biskra</option>
+                            <option value="Tebessa">Tébessa</option>
+                            <option value="El Oued">El Oued</option>
+                            <option value="Skikda">Skikda</option>
+                            <option value="Tiaret">Tiaret</option>
+                            <option value="Bejaïa">Bejaïa</option>
+                            <option value="Tlemcen">Tlemcen</option>
+                            <option value="Ouargla">Ouargla</option>
+                            <option value="Blida">Blida</option>
+                            <option value="Chlef">Chlef</option>
+                            <option value="Ghardaïa">Ghardaïa</option>
+                            <option value="Mostaganem">Mostaganem</option>
+                            <option value="Relizane">Relizane</option>
+                            <option value="Mascara">Mascara</option>
+                            <option value="Medea">Médéa</option>
+                            <option value="Souk Ahras">Souk Ahras</option>
+                            <option value="Saida">Saïda</option>
+                            <option value="Jijel">Jijel</option>
+                            <option value="Bordj Bou Arreridj">Bordj Bou Arréridj</option>
+                            <option value="M'Sila">M'Sila</option>
+                            <option value="Guelma">Guelma</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="beds">Chambres</label>
+                        <select id="beds">
+                            <option value="">Peu importe</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="search-property-btn">RECHERCHER</button>
+                </form>
+            </div>
+
+           
+
+            <div class="social-media">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-vimeo-v"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="#services">Services</a>
+          <a href="prop.html">Propriétés</a>
+          <a href="#contact">Contact</a>
+          <a href="about-us.html">À Propos</a>
+        </div>
+        
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        
+        <p>© 2025 RealEstateCo. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Script pour les fonctionnalités de filtrage et de recherche de propriétés
+        document.addEventListener('DOMContentLoaded', function() {
+            // Soumission du formulaire
+            const advancedSearchForm = document.getElementById('advancedSearchForm');
+            advancedSearchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                filterProperties();
+            });
+
+            // Boutons radio pour le type de propriété
+            const propertyTypeRadios = document.querySelectorAll('input[name="propertyType"]');
+            propertyTypeRadios.forEach(radio => {
+                radio.addEventListener('change', filterProperties);
+            });
+
+            // Boutons radio pour la fourchette de prix
+            const priceRangeRadios = document.querySelectorAll('input[name="priceRangeType"]');
+            priceRangeRadios.forEach(radio => {
+                radio.addEventListener('change', filterProperties);
+            });
+
+            // Recherche par mot-clé
+            const keywordSearch = document.getElementById('keywordSearch');
+            keywordSearch.addEventListener('input', function() {
+                filterProperties();
+            });
+
+            // Options de tri
+            const sortBy = document.getElementById('sortBy');
+            sortBy.addEventListener('change', function() {
+                filterProperties();
+            });
+
+            // Options d'affichage
+            const gridView = document.querySelector('.grid-view');
+            const listView = document.querySelector('.list-view');
+            
+            if (gridView && listView) {
+                gridView.addEventListener('click', function() {
+                    document.querySelector('.property-listings').classList.remove('list-layout');
+                    gridView.classList.add('active');
+                    listView.classList.remove('active');
+                });
+                
+                listView.addEventListener('click', function() {
+                    document.querySelector('.property-listings').classList.add('list-layout');
+                    listView.classList.add('active');
+                    gridView.classList.remove('active');
+                });
+            }
+
+            function filterProperties() {
+                // Obtenir toutes les valeurs de filtre
+                const categories = document.getElementById('categories').value;
+                const priceRange = document.getElementById('priceRange').value;
+                const purpose = document.getElementById('purpose').value;
+                const address = document.getElementById('address').value;
+                const beds = document.getElementById('beds').value;
+                const keyword = keywordSearch.value.toLowerCase();
+                
+                // Obtenir le type de propriété sélectionné
+                let propertyType = '';
+                propertyTypeRadios.forEach(radio => {
+                    if (radio.checked) propertyType = radio.value;
+                });
+                
+                // Obtenir la fourchette de prix sélectionnée
+                let priceRangeType = '';
+                priceRangeRadios.forEach(radio => {
+                    if (radio.checked) priceRangeType = radio.value;
+                });
+                
+                // Obtenir toutes les cartes de propriété
+                const propertyCards = document.querySelectorAll('.property-card');
+                
+                // Filtrer les propriétés selon les critères
+                propertyCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const bedsCount = card.querySelector('.meta-item:nth-child(1) span').textContent;
+                    const addressText = card.querySelector('.meta-item:nth-child(2) span').textContent;
+                    const statusTag = card.querySelector('.status-tag').textContent.toLowerCase();
+                    
+                    // Vérifier si la propriété correspond à tous les critères
+                    let matches = true;
+                    
+                    // Filtre par mot-clé
+                    if (keyword && !title.includes(keyword)) {
+                        matches = false;
+                    }
+                    
+                    // Filtre par objectif (à vendre/louer)
+                    if (purpose && !statusTag.includes(purpose.toLowerCase())) {
+                        matches = false;
+                    }
+                    
+                    // Filtre par nombre de chambres
+                    if (beds && !bedsCount.includes(beds)) {
+                        matches = false;
+                    }
+                    
+                    // Filtre par adresse
+                    if (address && addressText !== address) {
+                        matches = false;
+                    }
+                    
+                    // Afficher ou masquer la carte de propriété
+                    if (matches) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Dans une application réelle, vous voudriez peut-être aussi mettre à jour la pagination ici
+                updatePaginationAfterFilter();
+            }
+            
+            function updatePaginationAfterFilter() {
+                // Compter les propriétés visibles
+                const visibleProperties = document.querySelectorAll('.property-card[style="display: block;"]').length || 
+                                          document.querySelectorAll('.property-card:not([style*="display: none"])').length;
+                
+                // Mettre à jour le texte d'information sur les résultats
+                document.querySelector('.results-info p').textContent = `Affichage de 01 - ${visibleProperties} sur ${visibleProperties} résultats`;
+                
+                // Masquer la pagination si moins de 8 propriétés sont visibles
+                const pagination = document.querySelector('.pagination');
+                if (visibleProperties <= 8) {
+                    pagination.style.display = 'none';
+                } else {
+                    pagination.style.display = 'flex';
+                }
+            }
+        });
+    </script>
+</body>

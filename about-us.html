@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RealEstateCo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link
+         href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="script.js"></script>
+<style>
+/* About Us Page Specific Styles */
+.about-hero {
+    background-color: var(--bg-color);
+    padding: 160px 14% 80px;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.about-hero p {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.about-content {
+    background-color: #F2F5FA;
+    padding: 80px 14%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #0C0C0D;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #555;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission-vision {
+    padding: 80px 14%;
+    background-color: var(--bg-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.mission, .vision {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.mission:hover, .vision:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.mission h3, .vision h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mission h3 i, .vision h3 i {
+    color: var(--main-color);
+    font-size: 28px;
+}
+
+.mission p, .vision p {
+    color: #ccc;
+    line-height: 1.6;
+    text-align: left;
+    width: 100%;
+}
+
+/* Team Section */
+.team-section {
+    padding: 80px 14%;
+    background-color: #F2F5FA;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.agent-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.agent-card:hover {
+    transform: translateY(-10px);
+}
+
+.agent-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.agent-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.agent-card:hover .agent-image img {
+    transform: scale(1.1);
+}
+
+.agent-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.agent-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #0C0C0D;
+}
+
+.agent-info .position {
+    color: var(--main-color);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.agent-info p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.agent-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.agent-social a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.agent-social a:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 14%;
+    background-color: var(--bg-color);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.value-card i {
+    font-size: 40px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 100%;
+    text-align: center;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 80px 14%;
+    background-color: #F2F5FA;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 140px 7% 60px;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero p, 
+    .about-content, 
+    .mission-vision, 
+    .team-section, 
+    .values-section, 
+    .stats-section {
+        padding: 60px 7%;
+    }
+    
+    .about-hero p {
+        width: 90%;
+    }
+}
+</style>
+</head>
+<body>
+    <header class="header" data-header>  
+        <ul class="navlist">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="prop.html">Propriétés</a></li>
+            <li><a href="about-us.html">À propos</a></li>
+        </ul>
+        <div>
+            <a href="inscription.html">
+                <button>Connexion</button>
+                <button>Inscription</button>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Section Héros À propos -->
+    <section class="about-hero">
+        <h1>À propos de <span>ImmoDZ</span></h1>
+        <p>
+            Nous sommes bien plus qu'une simple agence immobilière. Nous sommes vos partenaires pour trouver un endroit où vous vous sentirez réellement chez vous.
+        </p>
+    </section>
+    
+    <!-- Section Contenu À propos -->
+    <section class="about-content">
+        <div class="about-text">
+            <span class="badge-title">Notre Histoire</span>
+            <h2>Construire des communautés</h2>
+            <p>
+                ImmoDZ a commencé avec une vision simple : transformer l'expérience immobilière en se concentrant sur les personnes plutôt que sur les biens. Nous avons toujours cru que trouver la maison idéale, c'est découvrir un lieu où l'on peut vraiment être soi-même.
+            </p>
+            <p>
+                Au fil des années, nous sommes passés d'une petite agence locale à un nom de confiance dans le secteur immobilier de la région. Nous avons aidé des milliers de familles à trouver la maison de leurs rêves et des investisseurs à acquérir des biens précieux. Malgré cette croissance, nous n'avons jamais perdu de vue notre mission principale : offrir un service personnalisé et centré sur le client.
+            </p>
+            <p>
+                Aujourd'hui, notre équipe de professionnels dévoués allie expertise du secteur et véritable passion pour connecter les gens avec des lieux où ils peuvent s'épanouir. Nous sommes fiers de notre connaissance approfondie du marché, de notre approche innovante et de notre engagement constant envers la satisfaction de nos clients.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="img/feature-banner-1.jpg">
+        </div>
+    </section>
+    
+    <!-- Section Équipe -->
+    <section class="team-section">
+        <div class="title-wrapper">
+            <span class="badge-title">Notre Équipe</span>
+            <h2 class="section-title headline-small">Rencontrez nos agents experts</h2>
+            <p style="color: black;">Notre talentueuse équipe de professionnels est dédiée à fournir un service exceptionnel et à trouver les solutions immobilières parfaites pour tous nos clients.</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="img/avatar-2.jpg" >
+                </div>
+                <div class="agent-info">
+                    <h3>Yasmine Merabet</h3>
+                    <p class="position">Directrice Générale</p>
+                    <p>Avec plus de 15 ans d'expérience, Emma dirige notre équipe avec expertise dans les propriétés de luxe et l'analyse du marché.</p>
+                    <div class="agent-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="img/avatar-1.jpg" alt="Agent James Parker">
+                </div>
+                <div class="agent-info">
+                    <h3>Walid Bensaïd</h3>
+                    <p class="position">Consultant Immobilier Senior</p>
+                    <p>James est spécialisé dans les propriétés commerciales et a aidé de nombreuses entreprises à trouver l'emplacement idéal.</p>
+                    <div class="agent-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="img/avatar-3.jpg" alt="Agent Sophia Chang">
+                </div>
+                <div class="agent-info">
+                    <h3>Karim Meddah</h3>
+                    <p class="position">Experte en Résidentiel</p>
+                    <p>L’attention de Sophia aux détails et sa compréhension des besoins des clients font d’elle une experte pour associer les familles à leur maison idéale.</p>
+                    <div class="agent-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="./img/avatar-4.jpg" alt="Agent Daniel Martinez">
+                </div>
+                <div class="agent-info">
+                    <h3>mohamed bensalm</h3>
+                    <p class="position">Spécialiste en Investissement</p>
+                    <p>Grâce à son parcours en finance, Daniel fournit des conseils stratégiques aux investisseurs cherchant à construire ou diversifier leur portefeuille immobilier.</p>
+                    <div class="agent-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="prop.html">Propriétés</a>
+            <a href="about-us.html">À propos</a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        
+        <p>© 2025 ImmoDZ. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
